@@ -8,6 +8,7 @@ const routes = require('./route/routes');
 const hbs = require('hbs');
 const rootDir = require('./utils/path');
 const path = require('path');
+const port = process.env.port || 3000;
 const app = express();
 //const rootDir = require('./utils/path');
 
@@ -58,7 +59,7 @@ app.get('/about', (req, res, next) => {
 
 app.use(controller.File404);
 
-app.listen(3000, () => {
-    console.log('Server on port 3000 has been started....');
+app.listen(port, () => {
+    console.log(`Server on port ${port} has been started....`);
 });
 
